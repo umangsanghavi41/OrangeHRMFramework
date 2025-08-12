@@ -1,0 +1,10 @@
+utility\JavaFakerClass.class
+baseclass\BaseClass.class
+pages\LoginPage.class
+pages\HomePage.class
+utility\ExcelFileDataReader.class
+utility\GetData.class
+utility\PropertyFileClass.class
+pages\AdminPage.class
+testcases\HomePageTestCases.class
+testcases\LoginTestCases.class
