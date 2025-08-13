@@ -1,5 +1,8 @@
 package testcases;
 
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
 import java.time.Duration;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,7 +11,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import baseclass.BaseClass;
-import junit.framework.Assert;
 
 public class EmployeeListTestCases extends BaseClass {
 	@BeforeMethod
@@ -28,6 +30,12 @@ public class EmployeeListTestCases extends BaseClass {
   public void validateRandomSearch()
   {
 	  boolean result=employeeList.noRecordValidation();
+	  Assert.assertTrue(result);
+  }
+  @Test(priority=3)
+  public void validateaddButtonFunctionality()
+  {
+	  boolean result=employeeList.addButtonFunctionality();
 	  Assert.assertTrue(result);
   }
 }

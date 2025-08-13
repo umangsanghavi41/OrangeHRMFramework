@@ -32,6 +32,12 @@ public class EmployeeList {
 	@FindBy(xpath = "//span[text()='No Records Found']")
 	WebElement noRecordsFoundText;
 	
+	@FindBy(xpath = "(//div[@class='orangehrm-paper-container']//button[@type='button'])[1]")
+	WebElement addEmployeeButton;
+	
+	@FindBy(xpath = "//h6[contains(@class,'orangehrm-main-title')]")
+	WebElement addEmployeeTitle;
+	
 	public boolean searchEmployee()
 	{
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
@@ -51,5 +57,9 @@ public class EmployeeList {
 		wait.until(ExpectedConditions.visibilityOf(noRecordsFoundText));
 		return noRecordsFoundText.isDisplayed();
 	}
-
+	public boolean addButtonFunctionality()
+	{
+		addEmployeeButton.click();
+		return addEmployeeTitle.isDisplayed();
+	}
 }

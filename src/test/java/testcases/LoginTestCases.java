@@ -1,10 +1,12 @@
 package testcases;
 
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import baseclass.BaseClass;
-import junit.framework.Assert;
 import utility.ExcelFileDataReader;
 import utility.ListenerUtil;
 import utility.RetryAnalyzerClass;

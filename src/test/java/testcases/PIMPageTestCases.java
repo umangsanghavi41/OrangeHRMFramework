@@ -1,10 +1,12 @@
 package testcases;
 
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import baseclass.BaseClass;
-import junit.framework.Assert;
 
 public class PIMPageTestCases extends BaseClass{
 	@BeforeMethod

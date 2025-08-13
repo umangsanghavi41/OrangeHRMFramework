@@ -1,5 +1,8 @@
 package testcases;
 
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -9,7 +12,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import baseclass.BaseClass;
-import junit.framework.Assert;
 
 public class AddEmployeeTestCases extends BaseClass{
 	@BeforeMethod
