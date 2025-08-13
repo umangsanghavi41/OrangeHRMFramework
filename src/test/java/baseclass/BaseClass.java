@@ -4,9 +4,11 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -53,22 +55,18 @@ public class BaseClass {
 		driver.get(propertyFileClass.readData("url"));
 		driver.manage().window().maximize();
 	}
-	@AfterMethod
-	public void tearDown()
-	{
-		driver.quit();
-	}
-	
-	@AfterMethod
-	public void captureScreenshot(ITestResult iTestResult)
+	@AfterMethod(alwaysRun = true)
+	public void captureScreenshot(ITestResult iTestResult) throws InterruptedException
 	{
 		if(driver!=null)
 		{
 		if(ITestResult.FAILURE==iTestResult.getStatus())
 		{
+			Thread.sleep(2000);
 			ScreenshotUtil screenshotUtil=new ScreenshotUtil(driver);
-			screenshotUtil.captureScreenshot();
+			screenshotUtil.captureScreenshot(iTestResult.getName());
 		}
-	}
-}
+		driver.quit();
+
+	}}
 }

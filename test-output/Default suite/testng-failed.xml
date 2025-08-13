@@ -7,8 +7,6 @@
         <methods>
           <include name="captureScreenshot"/>
           <include name="validateLogin"/>
-          <include name="invalidLogin"/>
-          <include name="tearDown"/>
           <include name="setup"/>
         </methods>
       </class> <!-- testcases.LoginTestCases -->

@@ -15,6 +15,6 @@ public class ListenerUtil implements ITestListener
 	public void onTestFailure(ITestResult iTestResult)
 	{
 		ScreenshotUtil screenshotUtil=new ScreenshotUtil(driver);
-		screenshotUtil.captureScreenshot();
+		screenshotUtil.captureScreenshot(iTestResult.getName());
 	}
 }
