@@ -7,9 +7,10 @@ import baseclass.BaseClass;
 import junit.framework.Assert;
 import utility.ExcelFileDataReader;
 import utility.ListenerUtil;
+import utility.RetryAnalyzerClass;
 
 public class LoginTestCases extends BaseClass {
-	@Test(priority = 1)
+	@Test(priority = 1,retryAnalyzer = RetryAnalyzerClass.class)
 	public void validateLogin() {
 		loginPage.doLogin(propertyFileClass.readData("username"), propertyFileClass.readData("password"));
 		String url = getData.getURL();
